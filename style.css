@@ -822,7 +822,7 @@ option {
     width: fit-content;
     height: fit-content;
     max-width: calc(100% - 4rem);
-    max-height: calc(100% - 3rem);
+    max-height: calc(100% - 6rem);
     padding: 1rem;
     background-color: white;
     border-radius: 1rem;
