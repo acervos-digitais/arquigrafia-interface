@@ -5,7 +5,6 @@ function populateOverlay(imageId, imgUrl) {
   const imgEl = document.getElementById("overlay--image");
   imgEl.src = imgUrl;
 
-
   // cores
   const imgColors = objectData["images"][imageId]["dominant_color"]["palette"];
   const imgColorsEl = document.getElementById('overlay--colors');
@@ -48,23 +47,39 @@ function populateOverlay(imageId, imgUrl) {
   // essa parte tenta corrigir um problema de como a imagem e o retângulo estão estruturados no HTML e CSS
   // os elementos estão separados, então, quando o tamanho da imagem muda, o box container precisa atualizar
   // no futuro a intenção é melhorar a estrutura da imagem e que esse remendo não precise existir
-  const resizeBoxEl = new ResizeObserver(matchImageSize);
-  resizeBoxEl.observe(imgEl);
+  const resizeBoxObserver = new ResizeObserver(matchImageSize);
+  resizeBoxObserver.observe(imgEl);
 
   // mostrar overlay
   const overlay = document.getElementById('overlay');
   overlay.classList.remove('overlay--hidden');
   setTimeout(() => overlayIsOpened = true, 1);
+
+  // fechar overlay (remover quando a imagem e o retângulo estiverem melhor estruturados)
+  function closeOverlay() {
+    if (!overlayIsOpened) return
+    const overlayWindow = document.getElementById('overlay--window');
+    if (!overlayWindow.contains(event.target)) {
+      overlay.classList.add('overlay--hidden');
+      overlayIsOpened = false;
+      resizeBoxObserver.unobserve(imgEl);
+      resizeBoxObserver.disconnect();
+      document.removeEventListener('click', closeOverlay);
+    }
+  }
+  document.addEventListener('click', closeOverlay);
 }
 
 
-// fechar overlay
-document.addEventListener('click', ev => {
-  if (!overlayIsOpened) return;
-  const overlayWindow = document.getElementById('overlay--window');
-  if (!overlayWindow.contains(ev.target)) {
-    const overlay = document.getElementById('overlay');
-    overlay.classList.add('overlay--hidden');
-    overlayIsOpened = false;
-  }
-});
+// // fechar overlay (adicionar de volta quando a imagem e o retângulo estiverem melhor estruturados)
+// document.addEventListener('click', ev => {
+//   if (!overlayIsOpened) return;
+//   const overlayWindow = document.getElementById('overlay--window');
+//   if (!overlayWindow.contains(ev.target)) {
+//     const overlay = document.getElementById('overlay');
+//     overlay.classList.add('overlay--hidden');
+//     overlayIsOpened = false;
+//     resizeBoxEl.unobserve(element); // Stop observing
+//     resizeBoxEl.disconnect();
+//   }
+// });
