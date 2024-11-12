@@ -138,6 +138,37 @@ option {
   font-size: 0.875rem;
 }
 
+input[type="color"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: unset;
+  border: none;
+  inline-size: 0;
+  block-size: auto;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: solid 1px var(--color--gray-2);
+  border-radius: 0.5rem;
+}
+
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.button--color:hover {
+  border-color: var(--color--gray-3);
+}
+
+
+
 
 /* NAVEGATION */
 
@@ -253,15 +284,6 @@ option {
 
 .dropdown--color {
   width: 100%;
-}
-
-.button--color {
-  width: 100%;
-  border: solid 1px var(--color--gray-2);
-}
-
-.button--color:hover {
-  border-color: var(--color--gray-3);
 }
 
 

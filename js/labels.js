@@ -33,20 +33,23 @@ const LABEL_SUBCATEGORY = {
   ],
 }
 
+let activeCategory = '';
 let categoryButtons;
 function populateCategories() {
   categoryButtons = [];
-  let categoryContainer = document.getElementById('labels--categories');
+  const categoryContainer = document.getElementById('labels--categories');
 
-  LABEL_CATEGORY.forEach(e => {
-    let labelButton = document.createElement('button');
-    labelButton.textContent = e[pageLanguage];
-    labelButton.setAttribute("data-option", e['label']);
+  LABEL_CATEGORY.forEach(o => {
+    const labelButton = document.createElement('button');
+    labelButton.textContent = o[pageLanguage];
+    labelButton.setAttribute("data-option", o['label']);
     labelButton.addEventListener('click', () => {
-      populateSubcategories(e.label);
+      populateSubcategories(o.label);
       resetImages();
       categoryButtons.forEach(b => b.classList.remove('button--active'));
       labelButton.classList.add('button--active');
+      activeCategory = o.label;
+      activeSubcategory = '';
     });
     
     categoryContainer.appendChild(labelButton);
@@ -54,18 +57,20 @@ function populateCategories() {
   });
 }
 
+let activeSubcategory = '';
 let subcategoryButtons;
 function populateSubcategories(id) {
   subcategoryButtons = [];
-  let subcategoryContainer = document.getElementById('labels--subcategories');
+  const subcategoryContainer = document.getElementById('labels--subcategories');
   subcategoryContainer.innerHTML = '';
 
-  LABEL_SUBCATEGORY[id].forEach(e => {
-    let labelButton = document.createElement('button');
-    labelButton.textContent = e[pageLanguage];
-    labelButton.setAttribute("data-option", e['label']);
+  LABEL_SUBCATEGORY[id].forEach(o => {
+    const labelButton = document.createElement('button');
+    labelButton.textContent = o[pageLanguage];
+    labelButton.setAttribute("data-option", o['label']);
     labelButton.addEventListener('click', () => {
-      loadImages(e.label);
+      activeSubcategory = o.label;
+      loadImages(o.label);
       subcategoryButtons.forEach(b => b.classList.remove('button--active'));
       labelButton.classList.add('button--active');
     });

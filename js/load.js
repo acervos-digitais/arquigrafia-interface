@@ -8,7 +8,8 @@ let objectData = null;
 document.addEventListener("DOMContentLoaded", async () => {
   objectData = await objectDataP;
   populateCategories();
-  // setupColorPicker();
+  resetImages();
+  setupColorPicker();
 });
 
 async function fetchData(mUrl) {

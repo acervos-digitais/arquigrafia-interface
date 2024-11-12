@@ -28,6 +28,7 @@
   <script src="js/labels.js"></script>
   <script src="js/images.js"></script>
   <script src="js/overlay.js"></script>
+  <script src="js/color.js"></script>
 </head>
 
 <body>
@@ -72,15 +73,15 @@
         <div class="menu--dropdown">
           <select class="dropdown--color">
             <option value="color">color</option>
-            <option value="ordered">ordered</option>
+            <!-- <option value="ordered">ordered</option> -->
           </select>
-          <button class="button--color" style="background-color: #FFFFFF;"></button>
+          <input type="color" value="#ffffff" class="button--color" id="color--selection"></button>
         </div>
       </div>
     </section>
 
     <section class="images--container" id="images--container">
-      <!-- <a class="images--element" data-image-id=""><img src=""></a> -->
+      <!-- <a class="images--element" data--image-id=""><img src=""></a> -->
     </section>
 
     <div class="overlay--container overlay--hidden" id="overlay">
