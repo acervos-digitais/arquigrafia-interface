@@ -14,6 +14,7 @@
   --color--gray-5: rgb(60, 60, 60);
   --color--blue: rgb(58, 119, 233);
   --color--red: rgb(230, 0, 0);
+  --color--brightgreen: rgb(128, 255, 0);
   --line-thickness: 0.1rem;
   --menu-width: 320px;
   --base-padding: 1rem;
@@ -163,10 +164,6 @@ input[type="color"]::-webkit-color-swatch {
   border: none;
 }
 
-.button--color:hover {
-  border-color: var(--color--gray-3);
-}
-
 
 
 
@@ -283,7 +280,16 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .dropdown--color {
-  width: 100%;
+  flex: 1;
+}
+
+.button--color {
+  flex: 1;
+  border: solid 1px var(--color--gray-2);
+}
+
+.button--color:hover {
+  border-color: var(--color--gray-3);
 }
 
 
@@ -396,6 +402,17 @@ input[type="color"]::-webkit-color-swatch {
   display: block;
   object-fit: contain;
   border-radius: 0.25rem;
+}
+
+.overlay--box-container {
+  position: absolute;
+  top: 1rem;
+  overflow: hidden;
+}
+
+.overlay--box {
+  outline: solid 2px var(--color--brightgreen);
+  border: solid 1px var(--color--brightgreen);
 }
 
 .overlay--colors {
@@ -741,11 +758,11 @@ input[type="color"]::-webkit-color-swatch {
   }
 
   .dropdown--color {
-    width: 50%;
+    flex: 1;
   }
 
   .button--color {
-    width: 50%;
+    flex: 1;
     border: solid 1px var(--color--gray-2);
   }
 
@@ -860,6 +877,17 @@ input[type="color"]::-webkit-color-swatch {
     display: block;
     object-fit: contain;
     border-radius: 0.25rem;
+  }
+
+  .overlay--box-container {
+    position: absolute;
+    top: 1rem;
+    overflow: hidden;
+  }
+  
+  .overlay--box {
+    outline: solid 2px var(--color--brightgreen);
+    border: solid 1px var(--color--brightgreen);
   }
 
   .overlay--colors {
