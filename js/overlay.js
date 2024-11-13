@@ -77,10 +77,8 @@ function populateOverlay(imageId, imgUrl) {
       resizeBoxObserver.unobserve(imgEl);
       resizeBoxObserver.disconnect();
 
-      // audioEl.pause();
       audioMediaEl.src = "";
       audioMediaEl.classList.add("overlay--audio-inactive");
-      console.log(audioEl.style.display)
     }
   }
   document.addEventListener('click', closeOverlay);
