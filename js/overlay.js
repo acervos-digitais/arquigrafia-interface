@@ -50,36 +50,38 @@ function populateOverlay(imageId, imgUrl) {
   const resizeBoxObserver = new ResizeObserver(matchImageSize);
   resizeBoxObserver.observe(imgEl);
 
+  // legenda em áudio
+  const audioEl = document.getElementById("overlay--audio");
+  const audioMediaEl = document.getElementById("overlay--audio-media");
+  console.log(audioMediaEl)
+  audioEl.addEventListener("click", () => audioMediaEl.play());
+  audioMediaEl.addEventListener("canplay", () => audioEl.classList.remove("overlay--audio-inactive"));
+  audioMediaEl.src = AUDIO_URL.replace("IDID", imageId).replace("LANGLANG", pageLanguage);
+
+
+
   // mostrar overlay
   const overlay = document.getElementById('overlay');
-  overlay.classList.remove('overlay--hidden');
+  overlay.classList.remove('overlay--hidden');audioEl
   setTimeout(() => overlayIsOpened = true, 1);
 
-  // fechar overlay (remover quando a imagem e o retângulo estiverem melhor estruturados)
+  // fechar overlay
   function closeOverlay() {
     if (!overlayIsOpened) return
     const overlayWindow = document.getElementById('overlay--window');
     if (!overlayWindow.contains(event.target)) {
-      overlay.classList.add('overlay--hidden');
       overlayIsOpened = false;
+      overlay.classList.add('overlay--hidden');
+      document.removeEventListener('click', closeOverlay);
+
       resizeBoxObserver.unobserve(imgEl);
       resizeBoxObserver.disconnect();
-      document.removeEventListener('click', closeOverlay);
+
+      // audioEl.pause();
+      audioMediaEl.src = "";
+      audioMediaEl.classList.add("overlay--audio-inactive");
+      console.log(audioEl.style.display)
     }
   }
   document.addEventListener('click', closeOverlay);
 }
-
-
-// // fechar overlay (adicionar de volta quando a imagem e o retângulo estiverem melhor estruturados)
-// document.addEventListener('click', ev => {
-//   if (!overlayIsOpened) return;
-//   const overlayWindow = document.getElementById('overlay--window');
-//   if (!overlayWindow.contains(ev.target)) {
-//     const overlay = document.getElementById('overlay');
-//     overlay.classList.add('overlay--hidden');
-//     overlayIsOpened = false;
-//     resizeBoxEl.unobserve(element); // Stop observing
-//     resizeBoxEl.disconnect();
-//   }
-// });

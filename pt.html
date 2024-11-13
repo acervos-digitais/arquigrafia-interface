@@ -89,7 +89,7 @@
         <button class="overlay--close" id="overlay--close">
           <img src="assets/icon_close.svg">
         </button>
-        <img src="" id="overlay--image">
+        <img src="" class="overlay--image" id="overlay--image">
         <div class="overlay--box-container" id="overlay--box-container">
           <div class="overlay--box" id="overlay--box"></div>
         </div>
@@ -97,7 +97,13 @@
           <!-- <div class="overlay--colors-display"></div> -->
         </div>
         <div class="overlay--description">
-          <h1 id="overlay--caption"></h1>
+          <div class="overlay--caption-container">
+            <h1 id="overlay--caption"></h1>
+            <a class="overlay--audio overlay--audio-inactive" id="overlay--audio">
+              <img src="assets/icon_audio-play.svg" alt="play audio">
+              <audio id="overlay--audio-media" type="audio/wav" src=""></audio>
+            </a>
+          </div>
           <p>
             Descrição gerada automaticamente com IA.
             <br>
