@@ -41,8 +41,10 @@ function populateOverlay(imageId, imgUrl) {
     boxEl.style.marginLeft = `${objBox[0] * imgEl.width}px`;
     boxEl.style.marginTop = `${objBox[1] * imgEl.height}px`;
   }
-  if (imgEl.complete) matchImageSize();
-  else imgEl.addEventListener('load', matchImageSize);
+  setTimeout(() => {
+    if (imgEl.complete) matchImageSize();
+    else imgEl.addEventListener('load', matchImageSize);
+  }, window.innerWidth > 600 ? 0 : 200); // o mobile precisa de um tempo para atualizar
 
   // essa parte tenta corrigir um problema de como a imagem e o retângulo estão estruturados no HTML e CSS
   // os elementos estão separados, então, quando o tamanho da imagem muda, o box container precisa atualizar
@@ -60,7 +62,7 @@ function populateOverlay(imageId, imgUrl) {
 
   // mostrar overlay
   const overlay = document.getElementById('overlay');
-  overlay.classList.remove('overlay--hidden');audioEl
+  overlay.classList.remove('overlay--hidden'); audioEl
   setTimeout(() => overlayIsOpened = true, 1);
 
   // fechar overlay
@@ -72,6 +74,10 @@ function populateOverlay(imageId, imgUrl) {
       overlay.classList.add('overlay--hidden');
       document.removeEventListener('click', closeOverlay);
 
+      boxEl.style.width = '0';
+      boxEl.style.height = '0';
+      boxEl.style.marginLeft = '-5px';
+      boxEl.style.marginTop = '-5px';
       resizeBoxObserver.unobserve(imgEl);
       resizeBoxObserver.disconnect();
 
