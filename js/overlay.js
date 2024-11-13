@@ -53,11 +53,9 @@ function populateOverlay(imageId, imgUrl) {
   // legenda em áudio
   const audioEl = document.getElementById("overlay--audio");
   const audioMediaEl = document.getElementById("overlay--audio-media");
-  console.log(audioMediaEl)
   audioEl.addEventListener("click", () => audioMediaEl.play());
   audioMediaEl.addEventListener("canplay", () => audioEl.classList.remove("overlay--audio-inactive"));
   audioMediaEl.src = AUDIO_URL.replace("IDID", imageId).replace("LANGLANG", pageLanguage);
-
 
 
   // mostrar overlay
