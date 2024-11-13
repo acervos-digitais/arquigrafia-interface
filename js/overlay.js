@@ -26,14 +26,12 @@ function populateOverlay(imageId, imgUrl) {
   linkEl.setAttribute("href", linkHref);
 
   // sobrepor box container à imagem
+  const boxContainerEl = document.getElementById('overlay--box-container');
+  const boxEl = document.getElementById('overlay--box');
   function matchImageSize() {
     if (!overlayIsOpened) return;
-    // box container
-    const boxContainerEl = document.getElementById('overlay--box-container');
     boxContainerEl.style.width = `${imgEl.width}px`;
     boxContainerEl.style.height = `${imgEl.height}px`;
-    // box element
-    const boxEl = document.getElementById('overlay--box');
     const objBox = objectData["images"][imageId]["boxes"][activeSubcategory];
     // redimensionar tamanho do retângulo
     boxEl.style.width = `${(objBox[2] - objBox[0]) * imgEl.width}px`;
@@ -44,7 +42,7 @@ function populateOverlay(imageId, imgUrl) {
   setTimeout(() => {
     if (imgEl.complete) matchImageSize();
     else imgEl.addEventListener('load', matchImageSize);
-  }, window.innerWidth > 600 ? 0 : 200); // o mobile precisa de um tempo para atualizar
+  }, window.innerWidth > 600 ? 0 : 100); // o mobile precisa de um tempo para atualizar
 
   // essa parte tenta corrigir um problema de como a imagem e o retângulo estão estruturados no HTML e CSS
   // os elementos estão separados, então, quando o tamanho da imagem muda, o box container precisa atualizar
