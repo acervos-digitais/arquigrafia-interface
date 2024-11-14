@@ -42,7 +42,7 @@ function populateOverlay(imageId, imgUrl) {
   setTimeout(() => {
     if (imgEl.complete) matchImageSize();
     else imgEl.addEventListener('load', matchImageSize);
-  }, window.innerWidth > 600 ? 0 : 100); // o mobile precisa de um tempo para atualizar
+  }, window.innerWidth > 600 ? 25 : 100); // às vezes falha sem um tempo de espera
 
   // essa parte tenta corrigir um problema de como a imagem e o retângulo estão estruturados no HTML e CSS
   // os elementos estão separados, então, quando o tamanho da imagem muda, o box container precisa atualizar
