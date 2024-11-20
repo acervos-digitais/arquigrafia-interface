@@ -20,102 +20,10 @@
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
   <script>
-    const pageUrl = window.location.href.replace(/^https?:\/\//, '');
-    const pageLanguage = 'pt';
+    window.location.href = 'index.html';
   </script>
-
-  <script src="js/load.js"></script>
-  <script src="js/labels.js"></script>
-  <script src="js/images.js"></script>
-  <script src="js/overlay.js"></script>
-  <script src="js/color.js"></script>
 </head>
 
-<body>
-  <nav class="nav--container">
-    <div class="nav--menu">
-      <a href="https://www.acervosdigitais.fau.usp.br/" target="_blank">ACERVOS DIGITAIS</a>
-    </div>
-    <div class="nav--main">
-      <div class="nav--main-content">
-        <a href="https://www.arquigrafia.org.br/">ARQUIGRAFIA</a>
-      </div>
-      <div class="nav--main-content">
-        <a href="https://www.acervosdigitais.fau.usp.br/visao-computacional-aplicada-a-arquivos-de-arquitetura-arte-e-design/"
-          target="_blank">SOBRE</a>
-        <a href="https://github.com/acervos-digitais" target="_blank">GITHUB</a>
-        <div class="nav--main-language">
-          <a href="index.html">EN</a>
-          <p>PT</p>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <main class="content--container">
-
-    <section class="menu--container">
-      <div class="menu--divider"></div>
-      <div class="menu--item">
-        <p class="menu--header">Categoria</p>
-        <div class="menu--labels" id="labels--categories">
-          <!-- <button data-option=""></button> -->
-        </div>
-      </div>
-      <div class="menu--item">
-        <p class="menu--header">Subcategoria</p>
-        <div class="menu--labels" id="labels--subcategories">
-          <!-- <button data-option=""></button> -->
-        </div>
-      </div>
-      <div class="menu--item">
-        <p class="menu--header">Ordenar</p>
-        <div class="menu--dropdown">
-          <select class="dropdown--color">
-            <option value="color">cor</option>
-            <!-- <option value="ordered">índice</option> -->
-          </select>
-          <input type="color" value="#ffffff" class="button--color" id="color--selection"></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="images--container" id="images--container">
-      <!-- <a class="images--element" data--image-id=""><img src=""></a> -->
-    </section>
-
-    <div class="overlay--container overlay--hidden" id="overlay">
-      <div class="overlay" id="overlay--window">
-        <button class="overlay--close" id="overlay--close">
-          <img src="assets/icon_close.svg">
-        </button>
-        <img src="" class="overlay--image" id="overlay--image">
-        <div class="overlay--box-container" id="overlay--box-container">
-          <div class="overlay--box" id="overlay--box"></div>
-        </div>
-        <div class="overlay--colors" id="overlay--colors">
-          <!-- <div class="overlay--colors-display"></div> -->
-        </div>
-        <div class="overlay--description">
-          <div class="overlay--caption-container">
-            <h1 id="overlay--caption"></h1>
-            <a class="overlay--audio overlay--audio-inactive" id="overlay--audio">
-              <img src="assets/icon_audio-play.svg" alt="play audio">
-              <audio id="overlay--audio-media" type="audio/wav" src=""></audio>
-            </a>
-          </div>
-          <p>
-            Descrição gerada automaticamente com IA.
-            <br>
-            Em caso de erros, por favor contate <a href="mailto:acervosdigitais@usp.br"
-              target="_blank">acervosdigitais@usp.br</a>
-          </p>
-          <a id="overlay--info" target="_blank">Mais informações</a>
-        </div>
-      </div>
-    </div>
-
-  </main>
-</body>
+<body></body>
 
 </html>

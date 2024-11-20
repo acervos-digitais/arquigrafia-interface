@@ -211,6 +211,22 @@ audio {
   color: var(--color--gray-2);
 }
 
+.logo-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inline-logo {
+  height: 1rem;
+  margin-right: 0.5rem;
+  transform: translateY(-1px);
+}
+
+a:hover>img.inline-logo {
+  filter: invert(46%) sepia(46%) saturate(0%) hue-rotate(213deg) brightness(91%) contrast(81%);
+}
+
 
 
 
@@ -535,7 +551,7 @@ audio {
 
 /* MOBILE */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   /* MAIN STRUCTURE */
 
   :root {
