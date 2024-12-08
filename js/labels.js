@@ -7,20 +7,29 @@ const LABEL_CATEGORY = [
 
 const LABEL_SUBCATEGORY = {
   architecture: [
+    { label: 'awning', en: 'awning', pt: 'toldo/marquise' },
+    { label: 'balcony', en: 'balcony', pt: 'varanda' },
+    { label: 'door', en: 'door', pt: 'porta' },
+    { label: 'pillar', en: 'pillar', pt: 'coluna/pilar' },
     { label: 'railing', en: 'railing/banister', pt: 'corrimão/balaustre' },
     { label: 'stairs', en: 'stairs', pt: 'escada' },
     { label: 'tower', en: 'chimney/tower', pt: 'torre/chaminé' },
     { label: 'window', en: 'window', pt: 'janela' },
+    // { label: 'ramp', en: 'ramp', pt: 'rampa/passarela' },
   ],
   art: [
     { label: 'chair', en: 'chair', pt: 'cadeira' },
     { label: 'painting', en: 'painting', pt: 'quadro' },
     { label: 'sculpture', en: 'sculpture', pt: 'escultura' },
+    { label: 'sign', en: 'signage', pt: 'texto/sinalização' },
     { label: 'table', en: 'table', pt: 'mesa' },
     { label: 'vehicle', en: 'vehicle', pt: 'veículo' },
   ],
   materials: [
+    { label: 'concrete', en: 'concrete', pt: 'concreto' },
+    { label: 'glass', en: 'glass', pt: 'vidro' },
     { label: 'masonry', en: 'masonry', pt: 'alvenaria' },
+    { label: 'wood', en: 'wood', pt: 'madeira' },
     { label: 'wrought', en: 'metal', pt: 'metal' },
   ],
   nature: [
