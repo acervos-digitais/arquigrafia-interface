@@ -1,14 +1,21 @@
-let cImages = [];
-let cImageIdx = 0;
+let currentImages = [];
+let currentImageIdx = 0;
 
-function resetImages() {
+function resetImages(displayHelper = false) {
   const imagesContainer = document.getElementById('images--container');
-  imagesContainer.innerHTML = '';
+  const imagesContainerString = document.getElementById('images--string');
+  if (displayHelper) {
+    imagesContainer.innerHTML = imagesContainerString.innerHTML;
+    imagesContainer.classList.add('images--helper');
+  } else {
+    imagesContainer.innerHTML = '';
+    imagesContainer.classList.remove('images--helper');
+  }
 }
 
 function loadImages(subcategory) {
-  cImages = objectData["objects"][subcategory];
-  if (cImages === undefined || cImages.length === 0) {
+  currentImages = objectData["objects"][subcategory];
+  if (currentImages === undefined || currentImages.length === 0) {
     console.log('objeto não definido');
     return;
   }
@@ -17,7 +24,7 @@ function loadImages(subcategory) {
 
 function populateImageContainer() {
   resetImages();
-  for (let i = 0; i < cImages.length; i++) createImageElement(cImages[i]);
+  for (let i = 0; i < currentImages.length; i++) createImageElement(currentImages[i]);
   updateImagesByColor();
 }
 
@@ -29,7 +36,7 @@ function createImageElement(imageId) {
   const img = document.createElement('img');
   const imgUrl = IMAGES_URL.replace("IDID", imageId);
   img.src = imgUrl;
-  
+
   const a = document.createElement('a');
   a.classList.add('images--element');
   a.setAttribute("data--image-id", imageId);

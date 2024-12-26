@@ -61,7 +61,7 @@ function populateOverlay(imageId, imgUrl) {
   // mostrar overlay
   const overlay = document.getElementById('overlay');
   overlay.classList.remove('overlay--hidden'); audioEl
-  setTimeout(() => overlayIsOpened = true, 1);
+  setTimeout(() => overlayIsOpened = true, 1); // abrir depois de tentar fechar
 
   // fechar overlay
   function closeOverlay() {

@@ -375,6 +375,11 @@ a:hover>img.inline-logo {
   border-left: solid calc(var(--scrollbar-width) / 2) var(--color--gray-2);
 }
 
+.images--container.images--helper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
@@ -876,6 +881,12 @@ a:hover>img.inline-logo {
 
   .images--container::-webkit-scrollbar-thumb:hover {
     border: none;
+  }
+
+  .images--container.images--helper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 

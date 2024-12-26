@@ -9,7 +9,7 @@ let objectData = null;
 document.addEventListener("DOMContentLoaded", async () => {
   objectData = await objectDataP;
   populateCategories();
-  resetImages();
+  resetImages(true);
   setupColorPicker();
 });
 
