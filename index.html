@@ -39,7 +39,7 @@
         ACERVOS DIGITAIS
       </a>
     </div>
-    <div class="nav--main">
+    <div class="nav--main" id="nav--main">
       <div class="nav--main-content">
         <a href="https://www.arquigrafia.org.br/" class="logo-link">
           <img src="assets/logo_arquigrafia.svg" class="inline-logo"></img>
@@ -56,6 +56,9 @@
         </div>
       </div>
     </div>
+    <button class="nav--menu-icon" id="nav--menu-button" onclick="openMobileMenu()">
+      <img src="assets/icon_close.svg" alt="menu">
+    </button>
   </nav>
 
   <main class="content--container">
@@ -90,7 +93,10 @@
       <!-- <a class="images--element" data--image-id=""><img src=""></a> -->
     </section>
     <div id="images--string" style="display: none;">
-      para carregar as imagens, primeiro selecione uma categoria no menu, depois a subcategoria desejada.
+      <p>
+        para carregar as imagens, primeiro selecione uma categoria no menu, depois a subcategoria desejada.<br><br>
+        também é possível filtrar sua busca selecionando uma cor.
+      </p>
     </div>
 
     <div class="overlay--container overlay--hidden" id="overlay">

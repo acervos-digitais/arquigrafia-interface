@@ -211,6 +211,10 @@ audio {
   color: var(--color--gray-2);
 }
 
+.nav--menu-icon {
+  display: none;
+}
+
 .logo-link {
   display: flex;
   flex-direction: row;
@@ -379,6 +383,16 @@ a:hover>img.inline-logo {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.images--container.images--helper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images--container.images--helper p {
+  max-width: 520px;
 }
 
 
@@ -700,40 +714,81 @@ a:hover>img.inline-logo {
   .nav--container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     font-weight: 650;
     color: black;
     background-color: white;
-  }
-
-  .nav--menu {
-    width: 100vw;
     padding: var(--base-padding);
   }
 
+  .nav--menu {
+    width: auto;
+    padding: 0;
+  }
+
   .nav--main {
-    display: none;
-    /* display: flex; */
-    flex-direction: row;
-    width: calc(100vw - var(--menu-width));
-    padding: 1rem 2rem 1rem 1rem;
+    opacity: 0;
+    z-index: 10;
+    pointer-events: none;
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: auto;
+    padding: 1rem 2.75rem 1rem 1rem;
     margin: auto;
     justify-content: space-between;
+    text-align: right;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+    transition: opacity 150ms ease-in-out;
+  }
+
+  .nav--main.open {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav--main-content {
     display: flex;
-    flex-direction: row;
-    gap: calc(var(--base-padding) * 2);
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .nav--main-language {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
+    justify-content: right;
   }
 
   .nav--main-language p {
     color: var(--color--gray-2);
+  }
+
+  .nav--menu-icon {
+    all: unset;
+    z-index: 99;
+    height: 100%;
+    width: 1.65rem;
+    font-size: 0;
+    background-color: transparent;
+    transform: rotate(45deg);
+    transition: transform 150ms ease-in-out;
+  }
+
+  .nav--menu-icon:focus,
+  .nav--menu-icon:hover {
+    background-color: transparent;
+    outline: revert;
+  }
+
+  .nav--menu-icon.open {
+    transform: rotate(0deg);
   }
 
 
@@ -889,6 +944,10 @@ a:hover>img.inline-logo {
     justify-content: center;
   }
 
+  .images--container.images--helper p {
+    max-width: auto;
+  }
+
 
 
 
@@ -945,7 +1004,7 @@ a:hover>img.inline-logo {
     top: 1rem;
     overflow: hidden;
   }
-  
+
   .overlay--box {
     outline: solid 2px var(--color--brightgreen);
     border: solid 1px var(--color--brightgreen);
@@ -971,7 +1030,7 @@ a:hover>img.inline-logo {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .overlay--caption-container {
     display: flex;
     flex-direction: row;
@@ -981,7 +1040,7 @@ a:hover>img.inline-logo {
     width: 100%;
     margin: auto;
   }
-  
+
   .overlay--description h1 {
     width: fit-content;
     text-wrap: wrap;
@@ -994,7 +1053,7 @@ a:hover>img.inline-logo {
   #overlay--audio {
     font-size: 0;
   }
-  
+
   .overlay--audio img {
     width: 1.5rem;
     height: 1.5rem;
@@ -1003,7 +1062,7 @@ a:hover>img.inline-logo {
     font-size: 0;
     padding: 0;
   }
-  
+
   .overlay--audio-inactive {
     pointer-events: none;
     opacity: 0.5;
@@ -1013,7 +1072,7 @@ a:hover>img.inline-logo {
     pointer-events: none;
     opacity: 0.5;
   }
-  
+
   .overlay--description p,
   .overlay--description a {
     display: inline-block;
@@ -1024,7 +1083,7 @@ a:hover>img.inline-logo {
     padding: 0;
     margin: 0;
   }
-  
+
   .overlay--description a {
     cursor: pointer;
     font-weight: 500;
