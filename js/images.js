@@ -34,6 +34,7 @@ function createImageElement(imageId) {
   let imagesContainer = document.getElementById('images--container');
 
   const img = document.createElement('img');
+  const imgUrl = IMAGES_URL.replace("IDID", imageId);
   img.setAttribute("data--image-id", imageId);
   imgObserver.observe(img);
 
