@@ -34,8 +34,8 @@ function createImageElement(imageId) {
   let imagesContainer = document.getElementById('images--container');
 
   const img = document.createElement('img');
-  const imgUrl = IMAGES_URL.replace("IDID", imageId);
-  img.src = imgUrl;
+  img.setAttribute("data--image-id", imageId);
+  imgObserver.observe(img);
 
   const a = document.createElement('a');
   a.classList.add('images--element');
@@ -44,3 +44,15 @@ function createImageElement(imageId) {
   imagesContainer.appendChild(a);
   a.appendChild(img);
 }
+
+const imgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const t = entry.target;
+      imageId = (t.getAttribute('data--image-id'));
+      const imgUrl = IMAGES_URL.replace("IDID", imageId);
+      t.src = imgUrl;
+      t.onload = () => t.classList.add('loaded');
+    }
+  });
+});

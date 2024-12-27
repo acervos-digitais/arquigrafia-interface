@@ -352,6 +352,12 @@ a:hover>img.inline-logo {
   width: 100%;
   object-fit: cover;
   background-color: var(--color--gray-2);
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+}
+
+.images--element img.loaded {
+  opacity: 1;
 }
 
 .images--element:hover {
@@ -785,6 +791,7 @@ a:hover>img.inline-logo {
   .nav--menu-icon:hover {
     background-color: transparent;
     outline: revert;
+    cursor: pointer;
   }
 
   .nav--menu-icon.open {
@@ -912,6 +919,12 @@ a:hover>img.inline-logo {
     width: 100%;
     object-fit: cover;
     background-color: var(--color--gray-2);
+    opacity: 0;
+    transition: opacity 250ms ease-out;
+  }
+  
+  .images--element img.loaded {
+    opacity: 1;
   }
 
   .images--element:hover {
