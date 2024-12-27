@@ -22,9 +22,5 @@ function openMobileMenu() {
   const menuButton = document.getElementById('nav--menu-button');
   const menuContent = document.getElementById('nav--main');
   menuButton.classList.toggle('open');
-  if (menuButton.classList.contains('open')) {
-    menuContent.classList.add('open');
-  } else {
-    menuContent.classList.remove('open');
-  }
+  menuContent.classList.toggle('open');
 }
