@@ -50,12 +50,15 @@ function populateOverlay(imageId, imgUrl) {
   const resizeBoxObserver = new ResizeObserver(matchImageSize);
   resizeBoxObserver.observe(imgEl);
 
+
   // legenda em áudio
   const audioEl = document.getElementById("overlay--audio");
   const audioMediaEl = document.getElementById("overlay--audio-media");
-  audioEl.addEventListener("click", () => audioMediaEl.play());
-  audioMediaEl.addEventListener("canplay", () => audioEl.classList.remove("overlay--audio-inactive"));
   audioMediaEl.src = AUDIO_URL.replace("IDID", imageId).replace("LANGLANG", pageLanguage);
+  audioMediaEl.addEventListener("canplay", () => {
+    audioEl.addEventListener("click", () => audioMediaEl.play());
+    audioEl.classList.remove("overlay--audio-inactive");
+  });
 
 
   // mostrar overlay
