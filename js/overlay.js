@@ -55,7 +55,8 @@ function populateOverlay(imageId, imgUrl) {
   const audioEl = document.getElementById("overlay--audio");
   const audioMediaEl = document.getElementById("overlay--audio-media");
   audioMediaEl.src = AUDIO_URL.replace("IDID", imageId).replace("LANGLANG", pageLanguage);
-  audioMediaEl.addEventListener("canplay", () => {
+
+  audioMediaEl.addEventListener("loadedmetadata", () => {
     audioEl.addEventListener("click", () => audioMediaEl.play());
     audioEl.classList.remove("overlay--audio-inactive");
   });
@@ -63,7 +64,7 @@ function populateOverlay(imageId, imgUrl) {
 
   // mostrar overlay
   const overlay = document.getElementById('overlay');
-  overlay.classList.remove('overlay--hidden'); audioEl
+  overlay.classList.remove('overlay--hidden');
   setTimeout(() => overlayIsOpened = true, 1); // abrir depois de tentar fechar
 
   // fechar overlay
