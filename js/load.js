@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   populateCategories();
   resetImages(true);
   setupColorPicker();
+  setupClusterPicker();
 });
 
 async function fetchData(mUrl) {

@@ -29,6 +29,7 @@
   <script src="js/images.js"></script>
   <script src="js/overlay.js"></script>
   <script src="js/color.js"></script>
+  <script src="js/embedding.js"></script>
 </head>
 
 <body>
@@ -84,7 +85,11 @@
             <option value="color">color</option>
             <!-- <option value="ordered">ordered</option> -->
           </select>
-          <input type="color" value="#ffffff" class="button--color" id="color--selection"></button>
+          <input type="color" value="#ffffff" class="button--color" id="color--selection"/>
+
+          <select class="dropdown--color" id="cluster--selection" style="display: none;">
+            <!-- <option value=0>0</option> -->
+          </select>
         </div>
       </div>
     </section>
