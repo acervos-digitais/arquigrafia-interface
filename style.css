@@ -304,7 +304,7 @@ a:hover>img.inline-logo {
   gap: var(--element-gap);
 }
 
-.dropdown--color {
+.dropdown--order {
   flex: 1;
 }
 
@@ -874,7 +874,7 @@ a:hover>img.inline-logo {
     width: 100%;
   }
 
-  .dropdown--color {
+  .dropdown--order {
     flex: 1;
   }
 
