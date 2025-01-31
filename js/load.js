@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   objectData = await objectDataP;
   populateCategories();
   resetImages(true);
+  setupOrderCategories();
   setupColorPicker();
   setupClusterPicker();
 });

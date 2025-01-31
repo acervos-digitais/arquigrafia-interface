@@ -26,6 +26,7 @@
 
   <script src="js/load.js"></script>
   <script src="js/labels.js"></script>
+  <script src="js/order.js"></script>
   <script src="js/images.js"></script>
   <script src="js/overlay.js"></script>
   <script src="js/color.js"></script>
@@ -81,13 +82,14 @@
       <div class="menu--item">
         <p class="menu--header">Sort</p>
         <div class="menu--dropdown">
-          <select class="dropdown--order">
+          <select class="dropdown--order" id="order--categories">
             <option value="color">color</option>
+            <option value="cluster">cluster</option>
             <!-- <option value="ordered">ordered</option> -->
           </select>
-          <input type="color" value="#ffffff" class="button--color" id="color--selection"/>
+          <input type="color" value="#ffffff" class="button--color order--subcategory" id="color--selection"/>
 
-          <select class="dropdown--color" id="cluster--selection" style="display: none;">
+          <select class="dropdown--order order--subcategory order--subcategory--hidden" id="cluster--selection">
             <!-- <option value=0>0</option> -->
           </select>
         </div>

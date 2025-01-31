@@ -308,6 +308,10 @@ a:hover>img.inline-logo {
   flex: 1;
 }
 
+.order--subcategory--hidden {
+  display: none;
+}
+
 .button--color {
   flex: 1;
   border: solid 1px var(--color--gray-2);
@@ -876,6 +880,10 @@ a:hover>img.inline-logo {
 
   .dropdown--order {
     flex: 1;
+  }
+
+  .order--subcategory--hidden {
+    display: none;
   }
 
   .button--color {
