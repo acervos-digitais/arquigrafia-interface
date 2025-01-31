@@ -6,6 +6,11 @@ function setupOrderCategories() {
 
   updateImagesBy["color"] = updateImagesByColor;
   updateImagesBy["cluster"] = updateImagesByCluster;
+
+  // Temporário
+  if (!window.location.hash.includes("cluster")) {
+    document.getElementById("order--cluster").style.display = "none";
+  }
 }
 
 function updateOrderSubcategories(ev) {
