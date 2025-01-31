@@ -25,7 +25,8 @@ function loadImages(subcategory) {
 function populateImageContainer() {
   resetImages();
   for (let i = 0; i < currentImages.length; i++) createImageElement(currentImages[i]);
-  updateImagesByColor();
+  const orderCategory = document.getElementById("order--categories").value;
+  updateImagesBy[orderCategory]();
 }
 
 function createImageElement(imageId) {
