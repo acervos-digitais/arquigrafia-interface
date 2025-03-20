@@ -19,6 +19,7 @@
   --menu-width: 320px;
   --base-padding: 1rem;
   --scrollbar-width: calc(2rem / 3);
+  --scrollbar-images: rgba(180, 180, 180, 0);
   --element-gap: 0.25rem;
   --nav-height: 51px;
 }
@@ -374,19 +375,14 @@ a:hover>img.inline-logo {
   background-color: transparent;
 }
 
-.images--container::-webkit-scrollbar {
-  transform: translateX(-5rem);
-  background: transparent;
-}
-
 .images--container::-webkit-scrollbar-thumb {
   background: transparent;
   border-right: none;
-  border-left: none;
+  border-left: solid calc(var(--scrollbar-width) / 2) var(--scrollbar-images);
 }
 
 .images--container::-webkit-scrollbar-thumb:hover {
-  border-left: solid calc(var(--scrollbar-width) / 2) var(--color--gray-2);
+  border-left: solid calc(var(--scrollbar-width) / 2) var(--color--gray-3);
 }
 
 .images--container.images--helper {

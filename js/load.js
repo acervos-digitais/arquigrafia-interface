@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupOrderCategories();
   setupColorPicker();
   setupClusterPicker();
+  setupScrollbar();
 });
 
 async function fetchData(mUrl) {
