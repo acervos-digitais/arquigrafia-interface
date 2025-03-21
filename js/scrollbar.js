@@ -13,3 +13,18 @@ function setupScrollbar() {
   const imgContainer = document.getElementById('images--container');
   imgContainer.addEventListener('scroll', () => updateImageScrollbar(imgContainer));
 }
+
+if (navigator.userAgent.toLowerCase().includes("firefox")) {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--color--gray-1) white;
+    }
+    
+    .images--container {
+      scrollbar-color: var(--scrollbar-images) transparent;
+    }
+  `;
+  document.head.appendChild(style);
+}
